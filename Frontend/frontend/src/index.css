@@ -1,0 +1,98 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg-deep: #282c35;
+  --color-bg-slate: #1f232b;
+  --color-bg-medium: #323742;
+
+  --color-brand-blue: #3B82F6;
+  --color-brand-violet: #8B5CF6;
+  --color-brand-cyan: #06B6D4;
+
+  --color-text-high: #F8FAFC;
+  --color-text-medium: #CBD5E1;
+  --color-text-low: #94A3B8;
+
+  /* Force all borders to be square by defaulting tailwind radius values to 0px */
+  --radius-sm: 0px;
+  --radius-md: 0px;
+  --radius-lg: 0px;
+  --radius-xl: 0px;
+  --radius-2xl: 0px;
+  --radius-3xl: 0px;
+}
+
+@layer base {
+  body {
+    background-color: #282c35;
+    color: #CBD5E1;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    overflow-x: hidden;
+  }
+
+  /* Custom Scrollbar for modern SaaS feel */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #282c35;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #323742;
+    border-radius: 0px; /* Square scrollbar thumb */
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #3B82F6;
+  }
+}
+
+/* Glassmorphism panel with standard border */
+.glass-panel {
+  background: rgba(31, 35, 43, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+/* Glassmorphism cards with distinct Double Borders for high-tech SaaS appeal */
+.glass-card {
+  background: rgba(50, 55, 66, 0.55);
+  backdrop-filter: blur(8px);
+  border: 3px double rgba(255, 255, 255, 0.06);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-card:hover {
+  border-color: rgba(59, 130, 246, 0.3);
+  box-shadow: 0 10px 30px -10px rgba(59, 130, 246, 0.1);
+  transform: translateY(-2px);
+}
+
+/* Specific Double Border classes */
+.border-double-blue {
+  border: 4px double #3B82F6;
+}
+
+.border-double-violet {
+  border: 4px double #8B5CF6;
+}
+
+.border-double-cyan {
+  border: 4px double #06B6D4;
+}
+
+.border-double-slate {
+  border: 4px double #4b5563;
+}
+
+.glow-blue {
+  box-shadow: 0 0 40px -10px rgba(59, 130, 246, 0.3);
+}
+
+.glow-violet {
+  box-shadow: 0 0 40px -10px rgba(139, 92, 246, 0.3);
+}
+
+.glow-cyan {
+  box-shadow: 0 0 40px -10px rgba(6, 182, 212, 0.3);
+}
